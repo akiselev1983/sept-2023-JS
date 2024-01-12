@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style-index.css">
+</head>
+<body>
+<!--В index.html-->
+<!--1 отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users-->
+<!--2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.-->
+<!--3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html,
+      котра має детальну інфорацію про об'єкт на який клікнули-->
+<!--index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.-->
+<header><b>- USERS -</b></header>
+<hr>
+<div id="main"></div>
+<script>
+    let div = document.getElementById('main');
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(value => value.json())
+        .then(users => {
+            console.log(users)
+            for (const user of users) {
+                let block = document.createElement('div')
+                let blockId = document.createElement('p')
+                let blockName = document.createElement('p')
+                let btn = document.createElement('button')
+
+                blockId.innerText = `ID: ${user.id}`
+                blockName.innerText = `Name: ${user.name}`
+                btn.innerText = 'Info';
+
+                block.classList.add('block-user');
+                btn.classList.add('btn');
+
+                block.append(blockId, blockName, btn)
+                div.appendChild(block)
+
+                btn.onclick = function () {
+                    document.location = 'user-details.html?data=' + JSON.stringify(user)
+                }
+            }
+        })
+
+
+</script>
+
+
+</body>
+</html>
