@@ -41,13 +41,12 @@
             ulBlock.classList.add('ulBlock');
             if (typeof user[item] !== "object") {
                 const liBlock = document.createElement('li');
-                liBlock.innerText = `${item}: ${user[item]}`;
+                liBlock.innerText = `${item}: ${user[item]};`;
                 ulBlock.appendChild(liBlock);
                 blockDiv.appendChild(ulBlock);
 
             }else {
                 ulBlock.innerText = `${item}:`
-                ulBlock.classList.add('text');
                 blockDiv.appendChild(ulBlock);
                 objectUser(user[item]);
             }

@@ -16,15 +16,19 @@ hr{
     align-items: center;
 }
 .blockDiv{
-    height: 90%;
+    height: 85%;
     width: 90%;
+    background-color: lightyellow;
     border-radius: 8px;
     border: 2px solid black;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-content: space-around;
+
 }
 .ulBlock{
-    font-size: 18px;
+    font-size: 24px;
 }
 .btnPosts{
     width: 90%;
@@ -40,10 +44,11 @@ hr{
 }
 .divPost{
     width: 18vw;
+    background-color: lightyellow;
     padding: 0 5px;
     border-radius: 5px;
     border: 2px solid black;
-    margin-bottom: 2vw;
+    margin-bottom: 1.5vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,4 +59,7 @@ hr{
     margin-bottom: 2%;
     border-radius: 5px;
     font-weight: bolder;
+}
+ul{
+    margin: 0;
 }

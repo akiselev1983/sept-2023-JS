@@ -17,6 +17,7 @@ hr{
 #post{
     height: 100%;
     width: 60%;
+    background-color: lightyellow;
     border: 2px solid black;
     border-radius: 8px;
     display: flex;
@@ -37,6 +38,7 @@ p{
 }
 .divComment{
     width: 23%;
+    background-color: lightyellow;
     border-radius: 8px;
     border: 2px solid black;
     padding: 2px;
